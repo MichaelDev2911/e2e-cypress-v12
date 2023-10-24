@@ -1,5 +1,24 @@
 {
   "devDependencies": {
-    "cypress": "^12.15.0"
+    "@faker-js/faker": "^8.0.2",
+    "cypress": "^12.15.0",
+    "cypress-mailosaur": "^2.13.0",
+    "eslint": "^8.52.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-cypress": "^2.13.3",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0"
+  },
+  "name": "cy-eslint-example",
+  "version": "2.13.3",
+  "description": "Sample project to demonstrate the rules of eslint-plugin-cypress.",
+  "main": "cypress.config.js",
+  "scripts": {
+    "lint": "eslint cypress/e2e/*.cy.js",
+    "lint:fix": "eslint cypress/e2e/*.cy.js --fix",
+    "cy:open": "cypress open",
+    "test": "cypress run"
   }
 }
