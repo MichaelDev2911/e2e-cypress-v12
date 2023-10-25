@@ -16,4 +16,12 @@ Cypress.Commands.add('fillSignupFormAndSubmit', (email, password) => {
     cy.wait('@getNotes')
   })
 })
+
+Cypress.Commands.add('fillLoginFormAndSubmit', (email, password) => {
+  cy.intercept('GET', '**/notes').as('getNotes')
+  cy.visit('/login')
+  cy.get('#email').type(email)
+  cy.get('#password').type(password, { log: false })
+  cy.contains('button', 'Login').click()
+})
   
