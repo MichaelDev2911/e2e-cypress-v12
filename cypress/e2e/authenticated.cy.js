@@ -1,4 +1,3 @@
-// cypress/e2e/authenticated.cy.js
 
 import { faker } from '@faker-js/faker/locale/en'
 
@@ -30,8 +29,8 @@ describe('Scenarios where authentication is a pre-condition', () => {
     cy.fillSettingsFormAndSubmit()
 
     cy.get('.list-group-item')
-    .its('length')
-    .should('be.at.least', 1)
+      .its('length')
+      .should('be.at.least', 1)
     cy.wait('@getNotes')
     cy.wait('@paymentRequest')
       .its('state')
