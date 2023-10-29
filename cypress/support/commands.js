@@ -16,6 +16,7 @@ Cypress.Commands.add('fillSignupFormAndSubmit', (email, password) => {
     cy.wait('@getNotes')
   })
 })
+//
 
 Cypress.Commands.add('guiLogin', (
   username = Cypress.env('USER_EMAIL'),
