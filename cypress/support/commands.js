@@ -9,9 +9,10 @@ Cypress.Commands.add('fillSignupFormAndSubmit', (email, password) => {
   cy.contains('button', 'Signup').click()
   cy.get('#confirmationCode').should('be.visible')
   cy.mailosaurGetMessage(Cypress.env('MAILOSAUR_SERVER_ID'), {
+    
     sentTo: email
   }).then(message => {
-    const confirmationCode = message.html.body.match(/\d{6}/)[0]
+    const confirmationCode = message.html.body.match(/\\d{6}/)[0]
     cy.get('#confirmationCode').type(`${confirmationCode}{enter}`)
     cy.wait('@getNotes')
   })
