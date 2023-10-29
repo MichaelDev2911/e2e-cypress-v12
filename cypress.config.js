@@ -12,5 +12,3 @@ module.exports = defineConfig({
     },    
   },
 })
-// npx cypress run --record --key d8f41ccb-9255-4bba-9edd-49c3f7257cfd
-//projectId: "vsy9t6"
