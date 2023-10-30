@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "@cypress/grep": "^3.1.5",
     "@faker-js/faker": "^8.0.2",
     "cypress": "^12.15.0",
     "cypress-iframe": "^1.0.1",
@@ -20,7 +21,7 @@
     "lint": "eslint cypress/e2e/*.cy.js",
     "lint:fix": "eslint cypress/e2e/*.cy.js --fix",
     "test:cloud": "cypress run --record --tag 'desktop'",
-    "test:tablet:cloud": "cypress run --record --tag 'tablet' --config viewportWidth=767,viewportHeight=480 --spec cypress/e2e/authenticated.cy.js",
+    "test:tablet:cloud": "cypress run --record --tag 'tablet' --config viewportWidth=767,viewportHeight=480 --spec cypress/e2e/authenticated.cy.js --env grepTags=@desktop-and-tablet,grepOmitFiltered=true",
     "cy:open": "cypress open",
     "cy:open:tablet": "cypress open --config viewportWidth=767,viewportHeight=480",
     "test": "cypress run",
